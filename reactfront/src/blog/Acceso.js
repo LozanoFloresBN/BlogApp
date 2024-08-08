@@ -73,6 +73,7 @@ const CompLogin = () => {
           required
         />
         <button type="submit">Login</button>
+        <button type="button" className="btn btn-outline-secondary btn-lg" onClick={() => navigate('/')}>Cancel</button>
       </form>
       {isOpenModal && requiresVerification && (
         <VerificationModal
