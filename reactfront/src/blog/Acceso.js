@@ -46,12 +46,13 @@ const CompLogin = () => {
     localStorage.setItem('token', token);
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     // eslint-disable-next-line no-undef
+    navigate('/blogs');
     await Swal.fire({
       icon: 'success',
       title: `Bienvenido ${username}`,
       text: 'Inicio de sesión exitoso',
     });
-    navigate('/blogs');
+    
   };
 
   return (
