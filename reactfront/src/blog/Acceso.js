@@ -18,7 +18,7 @@ const CompLogin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(URI_LOGIN, { email, password });
-  
+
       if (response.data.requiresVerification) {
         setRequiresVerification(true);
         setIsOpenModal(true);
@@ -75,13 +75,13 @@ const CompLogin = () => {
         <button type="submit">Login</button>
       </form>
       {isOpenModal && requiresVerification && (
-  <VerificationModal
-    show={isOpenModal}
-    handleClose={() => setIsOpenModal(false)}
-    handleVerify={handleVerify}
-    email={email}
-  />
-)}
+        <VerificationModal
+          show={isOpenModal}
+          handleClose={() => setIsOpenModal(false)}
+          handleVerify={handleVerify}
+          email={email}
+        />
+      )}
     </div>
   );
 };
